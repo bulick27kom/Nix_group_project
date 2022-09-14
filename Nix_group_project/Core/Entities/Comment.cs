@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace Core
 {
 
-    internal class Comment : ILiker
+    public class Comment : ILiker
     {
 
         #region Properties
