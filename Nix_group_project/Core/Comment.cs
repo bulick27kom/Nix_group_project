@@ -35,19 +35,10 @@ namespace Core
         /// Пользователь, который оставил коментарий
         /// </summary>
         public User User { get; private set; }
-
-        /// <summary>
-        /// Количество лайков у этого коментария
-        /// </summary>
-        public int Likes { get; private set; } = 0;
-
-        /// <summary>
-        /// Количество диздайков у этого коментария
-        /// </summary>
-        public int Dislikes { get; private set; } = 0;
         #endregion
 
-       
+
+
 
         public Comment(Product product, string text, User user)
         {
@@ -71,7 +62,7 @@ namespace Core
             }
         }
 
-        public bool AddDisike(User user)
+        public bool AddDislike(User user)
         {
             Like dislike = new Like(user);
             if (_dislikes.Contains(dislike))
@@ -81,11 +72,6 @@ namespace Core
                 _dislikes.Add(dislike);
                 return true;
             }
-        }
-
-        public bool AddDislike(User user)
-        {
-            throw new NotImplementedException();
         }
 
         public int CounLikes()
