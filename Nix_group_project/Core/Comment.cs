@@ -10,10 +10,6 @@ namespace Core
 
     internal class Comment : ILiker
     {
-        #region Fields
-        private List<Like> _likes;
-        private List<Like> _dislikes;
-        #endregion
 
         #region Properties
         /// <summary>
@@ -35,6 +31,23 @@ namespace Core
         /// Пользователь, который оставил коментарий
         /// </summary>
         public User User { get; private set; }
+
+        /// <summary>
+        /// Количество лайков
+        /// </summary>
+        public int LikesCount { get; set; } = 0;
+        
+        /// <summary>
+        /// количество дизлайков
+        /// </summary>
+        public int DislikesCount { get ;  set; }
+        
+        /// <summary>
+        /// Список лайкныуших пользователей. 
+        /// Тольок авторизированный пользователь может поставить лайк или дизлайк
+        /// и только один раз.
+        /// </summary>
+        public List<User> UsersLikes { get ;  set; }
         #endregion
 
 
@@ -42,8 +55,7 @@ namespace Core
 
         public Comment(Product product, string text, User user)
         {
-            _likes = new List<Like>();
-            _dislikes = new List<Like>();
+            UsersLikes = new List<User>();
             Product = product;
             Text = text;
             CreatData = DateTime.Now;
@@ -52,60 +64,34 @@ namespace Core
 
         public bool AddLike(User user)
         {
-            Like like = new Like(user);
-            if (_likes.Contains(like))
+            
+            if (UsersLikes.Contains(user))
                 return false;
             else 
             {
-                _likes.Add(like);
+                UsersLikes.Add(user);
+                LikesCount++;
                 return true;
             }
         }
 
         public bool AddDislike(User user)
         {
-            Like dislike = new Like(user);
-            if (_dislikes.Contains(dislike))
+            if (UsersLikes.Contains(user))            
                 return false;
             else
             {
-                _dislikes.Add(dislike);
+                UsersLikes.Add(user);
+                DislikesCount++;
                 return true;
             }
         }
 
-        public int CounLikes()
-        {
-            return _likes.Count;
-        }
-
-        public int CounDisikes()
-        {
-            return _dislikes.Count;
-        }
-    }
-
-    class Like 
-    {
-        public User User { get; private set; }
-        public Like(User user)
-        {
-            User = user;
-        }
-    }
-
-    interface ILiker
-    {
-        bool AddLike(User user);
-        bool AddDislike(User user);
-
-        int CounLikes();
-        int CounDisikes();
     }
 
 
     // Заглушки для не существующих типов
-    class User { }
-    class Product { }
+    public class User { }
+    public class Product { }
 
 }

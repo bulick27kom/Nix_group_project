@@ -1,2 +1,33 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using Core;
+
+internal class Program
+{
+    private static void Main(string[] args)
+    {
+        ShopProcessor shopProcessor = new ShopProcessor();
+        shopProcessor.SayHello();
+    }
+
+    internal class ShopProcessor
+    {
+        User user = null;
+        internal void Start()
+        {
+            SayHello();
+        }
+
+        internal void SayHello()
+        {
+            string userName = "";
+            if (user == null) userName = "Guest";
+            else userName = user.ToString();
+            Console.WriteLine($"Hello {userName}");
+        }
+
+        internal void ShowMainMenu()
+        {
+            
+        }
+
+    }
+}
