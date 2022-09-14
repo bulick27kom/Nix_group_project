@@ -87,12 +87,4 @@ namespace Core
 
     }
 
-    interface IComment
-    {
-
-    }
-
-    
-
-
 }
