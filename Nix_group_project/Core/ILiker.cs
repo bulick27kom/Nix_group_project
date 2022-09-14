@@ -5,10 +5,10 @@
 
         int LikesCount { get; set; }
         int DislikesCount { get; set; }
-        List<User> UsersLikes { get; set; }
+        List<Person> UsersLikes { get; set; }
 
-        bool AddLike(User user);
-        bool AddDislike(User user);
+        bool AddLike(Person user);
+        bool AddDislike(Person user);
 
      
     }

@@ -16,7 +16,7 @@ namespace Core
         /// Коментируемый продукт
         /// </summary>
         public Product Product { get; set; }
-        
+
         /// <summary>
         /// Текст коментария 
         /// </summary>
@@ -30,44 +30,42 @@ namespace Core
         /// <summary>
         /// Пользователь, который оставил коментарий
         /// </summary>
-        public User User { get; private set; }
+        public Person User { get; private set; }
 
         /// <summary>
         /// Количество лайков
         /// </summary>
         public int LikesCount { get; set; } = 0;
-        
+
         /// <summary>
         /// количество дизлайков
         /// </summary>
-        public int DislikesCount { get ;  set; }
-        
+        public int DislikesCount { get; set; }
+
         /// <summary>
         /// Список лайкныуших пользователей. 
         /// Тольок авторизированный пользователь может поставить лайк или дизлайк
         /// и только один раз.
         /// </summary>
-        public List<User> UsersLikes { get ;  set; }
+        public List<Person> UsersLikes { get; set; }
         #endregion
 
 
-
-
-        public Comment(Product product, string text, User user)
+        public Comment(Product product, string text, Person user)
         {
-            UsersLikes = new List<User>();
+            UsersLikes = new List<Person>();
             Product = product;
             Text = text;
             CreatData = DateTime.Now;
             User = user;
         }
 
-        public bool AddLike(User user)
+        public bool AddLike(Person user)
         {
-            
+
             if (UsersLikes.Contains(user))
                 return false;
-            else 
+            else
             {
                 UsersLikes.Add(user);
                 LikesCount++;
@@ -75,9 +73,9 @@ namespace Core
             }
         }
 
-        public bool AddDislike(User user)
+        public bool AddDislike(Person user)
         {
-            if (UsersLikes.Contains(user))            
+            if (UsersLikes.Contains(user))
                 return false;
             else
             {
@@ -89,9 +87,12 @@ namespace Core
 
     }
 
+    interface IComment
+    {
 
-    // Заглушки для не существующих типов
-    public class User { }
-    public class Product { }
+    }
+
+    
+
 
 }

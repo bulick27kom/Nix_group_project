@@ -10,7 +10,7 @@ internal class Program
 
     internal class ShopProcessor
     {
-        User user = null;
+        Person user = null;
         internal void Start()
         {
             SayHello();
