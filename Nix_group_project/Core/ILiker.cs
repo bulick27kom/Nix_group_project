@@ -1,4 +1,6 @@
-﻿namespace Core
+﻿using Core.Entites;
+
+namespace Core
 {
     public interface ILiker
     {

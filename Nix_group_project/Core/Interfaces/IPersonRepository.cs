@@ -3,9 +3,9 @@
 namespace Core.Interfaces;
 public interface IPersonRepository
 {
-    public void Get();
-    public void Get(int id);
-    public void Create(Article article);
-    public void Update(Article article);
+    public List<Person> Get();
+    public Person Get(int id);
+    public void Create(Person person);
+    public void Update(Person person);
     public void Delete(int id);
 }
