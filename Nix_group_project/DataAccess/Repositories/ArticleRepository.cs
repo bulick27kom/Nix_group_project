@@ -19,7 +19,7 @@ public class ArticleRepository : IArticleRepository
     public void Delete(int id)
     {
         
-        Console.WriteLine($"Person deleted {id}");
+        Console.WriteLine($"article deleted {id}");
     }
 
     public List<Article> Get()
@@ -30,12 +30,12 @@ public class ArticleRepository : IArticleRepository
 
     public Article Get(int id)
     {
-        Console.WriteLine($"Person get by id: {id}");
+        Console.WriteLine($"article get by id: {id}");
         return _data.Articles.SingleOrDefault(p => p.Id == id)!;
     }
 
     public void Update(Article article)
     {
-        Console.WriteLine("Person updated");
+        Console.WriteLine("article updated");
     }
 }
