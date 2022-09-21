@@ -8,28 +8,28 @@ public class ArticleController
     private readonly IArticleRepository _articleRepository;
     public ArticleController()
     {
-        _articleRepository = (IArticleRepository)new ArticleController();
+        _articleRepository = (IArticleRepository)new ArticleRepository();
     }
     public void Get()
     {
         var articles = _articleRepository.Get();
         foreach (var article in articles)
         {
-            Console.WriteLine($"Id: {article.Id}, Name: {article.Title} {article.Text}");
+            Console.WriteLine($"Id: {article.Id}, Title: {article.Title} Text: {article.Text}");
         }
     }
 
     public void Get(int id)
     {
         var article = _articleRepository.Get(id);
-        Console.WriteLine($"Id: {article.Id}, Name: {article.Title} {article.Text}");
+        Console.WriteLine($"Id: {article.Id}, Title: {article.Title} Text: {article.Text}");
     }
 
     public void Delete(int id)
     {
         var article = _articleRepository.Get(id);
         _articleRepository.Delete(id);
-        Console.WriteLine($"Id: {article.Id}, Name: {article.Title} {article.Text}");
+        Console.WriteLine($"Id: {article.Id}, Title: {article.Title} Text: {article.Text}");
     }
     public void Update(Article article)
     {
