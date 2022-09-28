@@ -34,4 +34,20 @@ public class Data
             BirthDate = DateTime.Now.AddDays(-1),
         }
     };
+    public List<Article> Articles { get; set; } = new()
+    {
+
+        new Article()
+        {
+            Id = 1,
+            Title ="Max",
+            Text ="Peterson",
+        },
+         new Article()
+        {
+            Id = 2,
+            Text ="Goofy",
+            Title ="Bark",            
+        }
+    };
 }

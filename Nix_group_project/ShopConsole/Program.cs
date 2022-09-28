@@ -17,6 +17,17 @@ internal class Program
         personController.Delete(1);
         personController.Get();
         personController.Update(new Person());
+        ArticleController articleController = new ArticleController();
+        articleController.Get();
+        articleController.Get(1);
+        articleController.Create(new Article()
+        {
+            Id = 3,
+            Title = "test1"
+        });
+        articleController.Delete(1);
+        articleController.Get();
+        articleController.Update(new Article());
     }
 
 }
