@@ -5,6 +5,6 @@ public sealed class Article
     public string? Title { get; set; }
     public string? Text { get; set; }
 
-    // public List<Rating> Ratings { get; set; } = new List<Rating>();
-    // public List<Comment> Comments { get; set; } = new List<Comment>();
+     public List<Rating> Ratings { get; set; } = new List<Rating>();
+     public List<Comment> Comments { get; set; } = new List<Comment>();
 }

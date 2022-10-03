@@ -1,0 +1,68 @@
+[
+    {
+        "ProductID": 1,
+        "Name": "Inspiron",
+        "Description": "Multimedia",
+        "CategoryID": 1,
+        "Producer": "Dell",
+        "Supplier": "Net_Store",
+        "Price": 500.0,
+        "Category": null,
+        "CategoryName": null
+    },
+    {
+        "ProductID": 2,
+        "Name": "HP460",
+        "Description": "Home",
+        "CategoryID": 2,
+        "Producer": "HP",
+        "Supplier": "Net_Store",
+        "Price": 550.00,
+        "Category": null,
+        "CategoryName": null
+    },
+    {
+        "ProductID": 3,
+        "Name": "Thinkpad",
+        "Description": "Multimedia",
+        "CategoryID": 1,
+        "Producer": "Lenovo",
+        "Supplier": "Net_Store",
+        "Price": 800.0,
+        "Category": null,
+        "CategoryName": null
+    },
+    {
+        "ProductID": 4,
+        "Name": "MacBook",
+        "Description": "Multimedia",
+        "CategoryID": 1,
+        "Producer": "Apple",
+        "Supplier": "Net_Store",
+        "Price": 1300.0,
+        "Category": null,
+        "CategoryName": null
+    },
+    {
+        "ProductID": 5,
+        "Name": "G250",
+        "Description": "Home",
+        "CategoryID": 1,
+        "Producer": "HP",
+        "Supplier": "Net_Store",
+        "Price": 400.00,
+        "Category": null,
+        "CategoryName": null
+    },
+    {
+        "ProductID": 6,
+        "Name": "iMac",
+        "Description": "Work",
+        "CategoryID": 3,
+        "Producer": "Apple Inc.",
+        "Supplier": "Net_Store",
+        "Price": 800.0,
+        "Category": null,
+        "CategoryName": null
+    }
+]

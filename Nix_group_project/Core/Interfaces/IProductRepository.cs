@@ -1,12 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Core.Interfaces
 {
-    internal interface IProductRepository : IRepository<Product>
+    public interface IProductRepository
     {
+        void Add(Product pr);
+        void Edit(Product pr);
+        void Remove(int id);
+        IEnumerable<Product> GetProducts();
+        Product FindById(int id);
     }
 }
+
+
