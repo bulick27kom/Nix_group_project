@@ -1,4 +1,5 @@
 ﻿using System;
+
 namespace Core.Interfaces
 {
     public interface IProductRepository
@@ -10,4 +11,5 @@ namespace Core.Interfaces
         Product FindById(int id);
     }
 }
+
 

@@ -1,8 +1,11 @@
-﻿namespace Core;
+﻿using System.Reflection.Metadata.Ecma335;
+
+namespace Core;
 
 public class Product
 {
     public int Id { get; set; }
+
 
     public string Name { get; set; }
 
@@ -16,3 +19,4 @@ public class Product
 
     //public string ImagePath { get; set;} = "noimage.png";
 }
+
